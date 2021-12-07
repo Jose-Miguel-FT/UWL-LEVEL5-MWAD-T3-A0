@@ -26,14 +26,12 @@ function MedicalTreatmentList(props) {
     </li>
   ));
 
-  const filtering = medicalTreatmentsArray
-    .filter((m) => m.category.includes('november'))
-    .map((filteredElement) => (
-      <li>
-        {filteredElement.treatCourseId} | {filteredElement.type} |{' '}
-        {filteredElement.category} | {filteredElement.name}
-      </li>
-    ));
+  const filtering = (medicalTreatmentsArray.filter(m => m.category.includes("november")).map((filteredElement) => 
+  (
+          <li>
+            {filteredElement.treatCourseId} | {filteredElement.type} | {filteredElement.category} | {filteredElement.name}
+          </li>
+  )));
 
   return (
     <div>

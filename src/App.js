@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import MedicalTreatment from './components/MedicalTreatment';
 import MedicalTreatmentList from './components/MedicalTreatmentList';
+import MedicalTreatmentPanel from './components/MedicalTreatmentPanel';
 
 {
   /*
@@ -81,6 +82,8 @@ export default function App() {
       <MedicalTreatment medicalTreatment={medicalTreatment1} />
       <br />
       <MedicalTreatmentList string={jsonData} />
+      <br />
+      <MedicalTreatmentPanel />
     </div>
   );
 }
