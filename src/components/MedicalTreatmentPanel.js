@@ -1,7 +1,7 @@
 import React from 'react';
 
 function MedicalTreatmentPanel() {
-  const [items, setItems] = React.useState('');
+  const [items, setItems] = React.useState([]);
 
   const [treatId, setTreatId] = React.useState('');
 
@@ -16,30 +16,69 @@ function MedicalTreatmentPanel() {
   const [startDate, setStartDate] = React.useState('');
 
   const eventHandler = () => {
-    setItems([...items,[treatId, treatCourseId, type, category, name, startDate]]);
-  }
+    setItems([
+      ...items,
+      [
+        treatId,
+        ' ',
+        treatCourseId,
+        ' ',
+        type,
+        ' ',
+        category,
+        ' ',
+        name,
+        ' ',
+        startDate,
+      ],
+    ]);
+  };
 
   return (
     <div>
-      <input type="text" value={treatId} onChange={ event => setTreatId(event.target.value)}/>
+      <input
+        type="text"
+        value={treatId}
+        onChange={(event) => setTreatId(event.target.value)}
+      />
 
-      <input type="text" value={treatCourseId} onChange={ event => setTreatCourseId(event.target.value)}/>
+      <input
+        type="text"
+        value={treatCourseId}
+        onChange={(event) => setTreatCourseId(event.target.value)}
+      />
 
-      <input type="text" value={type} onChange={ event => setType(event.target.value)}/>
+      <input
+        type="text"
+        value={type}
+        onChange={(event) => setType(event.target.value)}
+      />
 
-      <input type="text" value={category} onChange={ event => setCategory(event.target.value)}/>
+      <input
+        type="text"
+        value={category}
+        onChange={(event) => setCategory(event.target.value)}
+      />
 
-      <input type="text" value={name} onChange={ event => setName(event.target.value)}/>
+      <input
+        type="text"
+        value={name}
+        onChange={(event) => setName(event.target.value)}
+      />
 
-      <input type="date" value={startDate} onChange={ event => setStartDate(event.target.value)}/>
+      <input
+        type="date"
+        value={startDate}
+        onChange={(event) => setStartDate(event.target.value)}
+      />
 
       <button onClick={eventHandler}> Click </button>
-
+      <br />
       <div>
-        {items.map((item) =>
-          <li>{item}</li>)}
+        {items.map((item) => (
+          <li>{item}</li>
+        ))}
       </div>
-
     </div>
   );
 }
